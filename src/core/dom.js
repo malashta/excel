@@ -18,6 +18,10 @@ class Dom {
     return this;
   }
 
+  on(eventType, fn) {
+    this.$el.addEventListener(eventType, fn);
+  }
+
   append(node) {
     if (node instanceof Dom) {
       node = node.$el;
