@@ -40,14 +40,13 @@ export function createTable(rowsCount = 15) {
       .map(toColumn)
       .join('');
 
-  const content = new Array(colsCount)
-      .fill('')
-      .map(createCell)
-      .join('');
-
   rows.push(createRow(cols));
 
   for (let i = 0; i < colsCount; i++) {
+    const content = new Array(colsCount)
+        .fill('')
+        .map(createCell)
+        .join('');
     rows.push(createRow(content, i + 1));
   }
 
