@@ -13,14 +13,19 @@ function toColumn(col) {
   return `
     <div class="column">
       ${col}
+      <div class="col-resize"></div>
     </div>
   `;
 }
 
 function createRow(content, rowTitle = '') {
+  const resizer = rowTitle ? '<div class="row-resize"></div>' : '';
   return `
     <div class="row">
-      <div class="row-info">${rowTitle}</div>
+      <div class="row-info">
+        ${rowTitle}
+        ${resizer}
+      </div>
       <div class="row-data">${content}</div>
     </div>  
   `;
