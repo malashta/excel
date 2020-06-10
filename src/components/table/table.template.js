@@ -21,7 +21,7 @@ function toColumn(col, index) {
 function createRow(content, rowTitle = '') {
   const resizer = rowTitle ? '<div class="row-resize" data-resize="row"></div>' : '';
   return `
-    <div class="row">
+    <div class="row" data-type="resizable">
       <div class="row-info">
         ${rowTitle}
         ${resizer}
