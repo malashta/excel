@@ -15,6 +15,7 @@ function createCell(row) {
      <div
        class="cell"
        contenteditable
+       data-type="cell"
        data-col="${col}"
        data-id="${row}:${col}"
      ></div>
