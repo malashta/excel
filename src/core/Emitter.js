@@ -5,10 +5,10 @@ export class Emitter {
 
   // Уведомляем слушателей, если они есть
   emit(eventName, ...args) {
-    if (!Array.isArray(this.listeners[event])) {
+    if (!Array.isArray(this.listeners[eventName])) {
       return false;
     }
-    this.listeners[event].forEach(listener => {
+    this.listeners[eventName].forEach(listener => {
       listener(...args);
     });
     return true;
