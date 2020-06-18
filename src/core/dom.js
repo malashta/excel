@@ -58,6 +58,11 @@ class Dom {
     return $(this.$el.querySelector(selector));
   }
 
+  focus() {
+    this.$el.focus();
+    return this;
+  }
+
   css(styles = {}) {
     Object.keys(styles).forEach(key => {
       this.$el.style[key] = styles[key];
