@@ -18,7 +18,7 @@ function toButton({icon, active, value}) {
   `;
 }
 
-export function createToolbar() {
+export function createToolbar(s) {
   const button = {
     icon: '',
     active: false,
@@ -28,32 +28,41 @@ export function createToolbar() {
     {
       ...button,
       icon: 'format_align_left',
-      value: {textAlign: 'left'}
+      value: {textAlign: 'left'},
+      active: s['textAlign'] === 'left'
     },
     {
       ...button,
       icon: 'format_align_center',
-      value: {textAlign: 'center'}
+      value: {textAlign: 'center'},
+      active: s['textAlign'] === 'center'
     },
     {
       ...button,
       icon: 'format_align_right',
-      value: {textAlign: 'right'}
+      value: {textAlign: 'right'},
+      active: s['textAlign'] === 'right'
     },
     {
       ...button,
       icon: 'format_bold',
-      value: {fontWeight: 'bold'}
+      active: s['fontWeight'] === 'bold',
+      value: {fontWeight: s['fontWeight'] === 'bold' ? 'normal' : 'bold'}
     },
     {
       ...button,
       icon: 'format_italic',
-      value: {fontStyle: 'italic'}
+      active: s['fontStyle'] === 'italic',
+      value: {fontStyle: s['fontStyle'] === 'italic' ? 'normal' : 'italic'}
     },
     {
       ...button,
       icon: 'format_underline',
-      value: {textDecoration: 'underline'}
+      active: s['textDecoration'] === 'underline',
+      value: {textDecoration: s['textDecoration'] === 'underline'
+        ? 'none'
+        : 'underline'
+      }
     },
   ];
   return buttons.map(toButton).join('');
