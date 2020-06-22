@@ -19,6 +19,10 @@ export class TableSelection {
     this.group = [];
   }
 
+  get selectedIds() {
+    return this.group.map($el => $el.id());
+  }
+
   selectGtoup($group) {
     this.clear();
     this.group = $group;
