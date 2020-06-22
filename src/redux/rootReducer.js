@@ -10,7 +10,6 @@ export function rootReducer(state, action) {
       field = 'dataState';
       return {...state, currentText: action.data.value, [field]: value(state, field, action)};
     case CHANGE_STYLES:
-      console.log(action);
       return {...state, currentStyle: action.data};
     default: return state;
   }

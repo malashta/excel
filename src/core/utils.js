@@ -23,7 +23,6 @@ export function storage(key, data) {
 
 export function isEqual(a, b) {
   if (typeof a === 'object' && typeof b === 'object') {
-    console.log(JSON.stringify(a) === JSON.stringify(b));
     return JSON.stringify(a) === JSON.stringify(b);
   }
   return a === b;
