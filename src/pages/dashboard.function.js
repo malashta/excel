@@ -2,12 +2,14 @@ import {storage} from '@/core/utils';
 
 function toHtml(key) {
   const model = storage(key);
-  console.log(key);
   const id = key.split(':')[1];
   return `
     <div class="db__record">
       <a href="#excel/${id}">${model.title}</a>
-      <strong>12.06.2020</strong>
+      <strong>
+        ${new Date(model.openedDate).toLocaleDateString()}
+        ${new Date(model.openedDate).toLocaleTimeString()}
+      </strong>
     </div>    
   `;
 }
