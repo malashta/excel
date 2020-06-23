@@ -1,7 +1,12 @@
-function toHtml() {
+import {storage} from '@/core/utils';
+
+function toHtml(key) {
+  const model = storage(key);
+  console.log(key);
+  const id = key.split(':')[1];
   return `
     <div class="db__record">
-      <a href="#">таблица 1</a>
+      <a href="#excel/${id}">${model.title}</a>
       <strong>12.06.2020</strong>
     </div>    
   `;
@@ -14,7 +19,7 @@ function getAllKeys() {
     if (!key.includes('excel')) {
       continue;
     }
-    keys.push(localStorage[key]);
+    keys.push(key);
   }
   return keys;
 }
